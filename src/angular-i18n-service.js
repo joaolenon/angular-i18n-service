@@ -67,7 +67,7 @@ angular.module('translate',[]).factory('translate', function ($rootScope, $http,
             try {
                 //TODO: I know it' uggly ... lets fix this someday!(?)
                 //parse YAML
-                data = jsyaml.load(data);
+                data = YAML.parse(data);
             } catch(err2) {
                 throw "Unable to parse the content on " + code;
             }

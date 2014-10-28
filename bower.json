@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "./src/angular-i18n-service.js",
   "dependencies": {
-    "angular": "1.2.6",
-    "yamljs" : "0.1.5"
+    "angular": "1.2.6"
   },
   "ignore": []
 }

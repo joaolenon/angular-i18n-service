@@ -6,8 +6,8 @@
         },
         
         locales : {
-            en : "/app/translations/messages.en.yml",
-            pt : "/app/translations/messages.pt.yml"
+            en : "/app/translations/messages.en.json",
+            pt : "/app/translations/messages.pt.json"
         }
     }).then(function() {
         console.log("Translations Loaded do something")

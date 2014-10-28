@@ -5,5 +5,13 @@
   "dependencies": {
     "angular": "~1.2.6"
   },
-  "ignore": []
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/mitsuishihidemi/angular-i18n-service",
+  "license": "MIT"
 }

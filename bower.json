@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "main": "./src/angular-i18n-service.js",
   "dependencies": {
-    "angular": "1.2.6"
+    "angular": "~1.2.6"
   },
   "ignore": []
 }

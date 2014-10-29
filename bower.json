@@ -1,6 +1,6 @@
 {
   "name": "angular-i18n-service",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "main": "./src/angular-i18n-service.js",
   "dependencies": {
     "angular": "~1.2.6"

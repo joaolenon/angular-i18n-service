@@ -44,33 +44,22 @@ angular.module('translate',[]).factory('translate', function ($rootScope, $http,
     }
 
     $scope.add = function(code,path) {
-        return service.loadFile(path).success(function(r) {
+        return service.loadFile(path).success(function(r) {            
             try {
-                $scope.locale.avaliable[code] = service.parse(code,r);
+                $scope.locale.avaliable[code] = r;                
                 if(code === $scope.settings.defaults.locale) {
-                    $scope.current($scope.settings.defaults.locale);
-                }
+                    $scope.current($scope.settings.defaults.locale);                
+                }                
                 $rootScope.$broadcast('i18n.newTranslation',{
                     code : code
-                });
-            } catch(error) {
+                });                
+            } catch(error) {                
                 console.error(error);
             }
         });
     }
 
-    service.parse = function(code,data) {
-        //detect type
-        try {
-            var parsed = JSON.parse(data);
-        } catch(err) {
-            throw "Unable to parse the content on " + err;
-        }
-
-        return data;
-    }
-
-    $scope.start = function(settings) {
+    $scope.start = function(settings) {        
         $scope.settings = angular.extend($scope.settings,settings);
 
         var def = $q.defer();
@@ -81,15 +70,15 @@ angular.module('translate',[]).factory('translate', function ($rootScope, $http,
 
         var i = 0;
         for(var code in $scope.settings.locales) {
-            try {
-                $scope.add(code,$scope.settings.locales[code]).success(function() {
+            try {                                
+                $scope.add(code,$scope.settings.locales[code]).success(function() {                    
                     i++;
-                    if(i == total) {
-                        def.resolve($scope);
-                    }
+                    if(i == total) {                        
+                        def.resolve($scope);                        
+                    }                    
                 });
             } catch(error) {
-                i++;
+                i++;                
                 console.error(error);
             }
         }

@@ -48,7 +48,7 @@ angular.module('translate',[]).factory('translate', function ($rootScope, $http,
             try {
                 $scope.locale.avaliable[code] = r;                
                 if(code === $scope.settings.defaults.locale) {
-                    $scope.current($scope.settings.defaults.locale);                
+                    $scope.locale.data = $scope.locale.avaliable[code];          
                 }                
                 $rootScope.$broadcast('i18n.newTranslation',{
                     code : code
